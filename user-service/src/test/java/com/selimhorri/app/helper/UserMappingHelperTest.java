@@ -10,16 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Pruebas Unitarias para UserMappingHelper
- * Taller 2 - Pruebas y Lanzamiento
- *
- * ✅ NUEVA PRUEBA UNITARIA 1: testMapUserToDto_ValidUser_MapsCorrectly
- * ✅ NUEVA PRUEBA UNITARIA 2: testMapDtoToUser_ValidDto_MapsCorrectly
- * ✅ NUEVA PRUEBA UNITARIA 3: testMapCredentialToDto_ValidCredential_MapsCorrectly
- * ✅ NUEVA PRUEBA UNITARIA 4: testMapUser_WithNullFirstName_HandlesGracefully
- * ✅ NUEVA PRUEBA UNITARIA 5: testMapUser_WithAllFields_MapsAllCorrectly
- */
 class UserMappingHelperTest {
 
     private User testUser;
@@ -28,24 +18,24 @@ class UserMappingHelperTest {
     @BeforeEach
     void setUp() {
         testCredential = Credential.builder()
-            .credentialId(1)
-            .username("santiago_test")
-            .password("password123")
-            .roleBasedAuthority(RoleBasedAuthority.ROLE_USER)
-            .isEnabled(true)
-            .isAccountNonExpired(true)
-            .isAccountNonLocked(true)
-            .isCredentialsNonExpired(true)
-            .build();
+                .credentialId(1)
+                .username("santiago_test")
+                .password("password123")
+                .roleBasedAuthority(RoleBasedAuthority.ROLE_USER)
+                .isEnabled(true)
+                .isAccountNonExpired(true)
+                .isAccountNonLocked(true)
+                .isCredentialsNonExpired(true)
+                .build();
 
         testUser = User.builder()
-            .userId(1)
-            .firstName("Santiago")
-            .lastName("Test")
-            .email("santiago@test.com")
-            .imageUrl("http://example.com/avatar.jpg")
-            .credential(testCredential)
-            .build();
+                .userId(1)
+                .firstName("Santiago")
+                .lastName("Test")
+                .email("santiago@test.com")
+                .imageUrl("http://example.com/avatar.jpg")
+                .credential(testCredential)
+                .build();
     }
 
     /**
@@ -74,19 +64,19 @@ class UserMappingHelperTest {
     void testMapDtoToUser_ValidDto_MapsCorrectly() {
         // Arrange
         CredentialDto credentialDto = CredentialDto.builder()
-            .credentialId(1)
-            .username("maria_test")
-            .password("password456")
-            .roleBasedAuthority(RoleBasedAuthority.ROLE_USER)
-            .build();
+                .credentialId(1)
+                .username("maria_test")
+                .password("password456")
+                .roleBasedAuthority(RoleBasedAuthority.ROLE_USER)
+                .build();
 
         UserDto userDto = UserDto.builder()
-            .userId(2)
-            .firstName("Maria")
-            .lastName("Test")
-            .email("maria@test.com")
-            .credentialDto(credentialDto)
-            .build();
+                .userId(2)
+                .firstName("Maria")
+                .lastName("Test")
+                .email("maria@test.com")
+                .credentialDto(credentialDto)
+                .build();
 
         // Act
         User result = UserMappingHelper.map(userDto);
@@ -124,12 +114,12 @@ class UserMappingHelperTest {
     void testMapUser_WithNullFirstName_HandlesGracefully() {
         // Arrange
         User userWithNull = User.builder()
-            .userId(3)
-            .firstName(null)
-            .lastName("Test")
-            .email("test@test.com")
-            .credential(testCredential)
-            .build();
+                .userId(3)
+                .firstName(null)
+                .lastName("Test")
+                .email("test@test.com")
+                .credential(testCredential)
+                .build();
 
         // Act
         UserDto result = UserMappingHelper.map(userWithNull);
@@ -150,14 +140,13 @@ class UserMappingHelperTest {
 
         // Assert
         assertAll("Verificar todos los campos mapeados",
-            () -> assertNotNull(result),
-            () -> assertEquals(1, result.getUserId()),
-            () -> assertEquals("Santiago", result.getFirstName()),
-            () -> assertEquals("Test", result.getLastName()),
-            () -> assertEquals("santiago@test.com", result.getEmail()),
-            () -> assertEquals("http://example.com/avatar.jpg", result.getImageUrl()),
-            () -> assertNotNull(result.getCredentialDto()),
-            () -> assertEquals("santiago_test", result.getCredentialDto().getUsername())
-        );
+                () -> assertNotNull(result),
+                () -> assertEquals(1, result.getUserId()),
+                () -> assertEquals("Santiago", result.getFirstName()),
+                () -> assertEquals("Test", result.getLastName()),
+                () -> assertEquals("santiago@test.com", result.getEmail()),
+                () -> assertEquals("http://example.com/avatar.jpg", result.getImageUrl()),
+                () -> assertNotNull(result.getCredentialDto()),
+                () -> assertEquals("santiago_test", result.getCredentialDto().getUsername()));
     }
 }
