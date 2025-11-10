@@ -1,621 +1,831 @@
-# e-Commerce-boot μServices 
+# Taller 2: Pruebas y Release 
+**Estudiante:** Santiago Arboleda
+**Curso:** Ingenieria de Software 5
 
-## Important Note: This project's new milestone is to move The whole system to work on Kubernetes, so stay tuned.
-
-<!--## Better Code Hub
-I analysed this repository according to the clean code standards on [Better Code Hub](https://bettercodehub.com/) just to get an independent opinion of how bad the code is. Surprisingly, the compliance score is high!
--->
-## Introduction
-- This project is a development of a small set of **Spring Boot** and **Cloud** based Microservices projects that implement cloud-native intuitive, Reactive Programming, Event-driven, Microservices design patterns, and coding best practices.
-- The project follows **CloudNative**<!--(https://www.cncf.io/)--> recommendations and The [**twelve-factor app**](https://12factor.net/) methodology for building *software-as-a-service apps* to show how μServices should be developed and deployed.
-- This project uses cutting edge technologies like Docker, Kubernetes, Elasticsearch Stack for
- logging and monitoring, Java SE 11, H2, and MySQL databases, all components developed with TDD in mind, covering integration & performance testing, and many more.
- - This project is going to be developed as stages, and all such stage steps are documented under
-  the project **e-Commerce-boot μServices** **README** file <!--[wiki page](https://github.com/mohamed-taman/Springy-Store-Microservices/wiki)-->.
 ---
-## Getting started
-### System components Structure
-Let's explain first the system structure to understand its components:
+
+## Video Demo
+
+**Video completo de la implementaci�n y demostraci�n:**
+
+[=� Ver Demo.mp4](capturas/Demo.mp4)
+
+> **Nota:** El video muestra la ejecuci�n completa de todos los componentes, pruebas y funcionalidad del sistema.
+
+---
+
+## Tabla de Contenidos
+
+1. [Configuraci�n de Entorno](#1-configuraci�n-de-entorno)
+2. [Microservicios Desplegados](#2-microservicios-desplegados)
+3. [Pruebas Implementadas](#3-pruebas-implementadas)
+4. [Arquitectura del Sistema](#4-arquitectura-del-sistema)
+5. [Comandos de Ejecuci�n](#5-comandos-de-ejecuci�n)
+6. [Evidencias y Capturas](#6-evidencias-y-capturas)
+
+---
+
+## 1. Configuraci�n de Entorno
+
+### 1.1 Docker Desktop
+
+**Estado:**  Operacional
+
+![Docker Desktop - Contenedores](capturas/DockerDesktop1.png)
+*Docker Desktop mostrando todos los contenedores en ejecuci�n*
+
+![Docker Desktop - Im�genes](capturas/DockerDesktop2.png)
+*Im�genes Docker construidas localmente*
+
+**Contenedores en ejecuci�n:**
+- Jenkins (puerto 8090)
+- Service Discovery / Eureka (puerto 8761)
+- Cloud Config Server (puerto 9296)
+- API Gateway (puerto 8080)
+- User Service (puerto 8700)
+- Product Service (puerto 8500)
+- Order Service (puerto 8300)
+- Proxy Client (puerto 8900)
+- Zipkin (puerto 9411)
+
+**Verificar en consola:**
+```powershell
+docker ps
 ```
-ecommerce-microservice-backend-app [μService] --> Parent folder.
-|- docs --> All docs and diagrams.
-|- k8s --> All **Kubernetes** config files.
-    |- proxy-client --> Authentication & Authorization µService, exposing all 
-    |- api-gateway --> API Gateway server
-    |- service-discovery --> Service Registery server
-    |- cloud-config --> Centralized Configuration server
-    |- user-service --> Manage app users (customers & admins) as well as their credentials
-    |- product-service --> Manage app products and their respective categories
-    |- favourite-service --> Manage app users' favourite products added to their own favourite list
-    |- order-service --> Manage app orders based on carts
-    |- shipping-service --> Manage app order-shipping products
-    |- payment-service --> Manage app order payments
-|- compose.yml --> contains all services landscape with Kafka  
-|- run-em-all.sh --> Run all microservices in separate mode. 
-|- setup.sh --> Install all shared POMs and shared libraries. 
-|- stop-em-all.sh --> Stop all services runs in standalone mode. 
-|- test-em-all.sh --> This will start all docker compose landscape and test them, then shutdown docker compose containers with test finishes (use switch start stop)
+
+![Docker Console](capturas/DockerConsole.png)
+*Salida de `docker ps` mostrando todos los contenedores activos*
+
+---
+
+### 1.2 Docker Hub - Im�genes Publicadas
+
+**Registry:** https://hub.docker.com/u/santi1761
+
+![Docker Hub](capturas/DockerHub.png)
+*Repositorio en Docker Hub con las 7 im�genes publicadas*
+
+**Im�genes disponibles:**
+- `santi1761/service-discovery-ecommerce-boot:0.1.0`
+- `santi1761/cloud-config-ecommerce-boot:0.1.0`
+- `santi1761/api-gateway-ecommerce-boot:0.1.0`
+- `santi1761/proxy-client-ecommerce-boot:0.1.0`
+- `santi1761/user-service-ecommerce-boot:0.1.0`
+- `santi1761/product-service-ecommerce-boot:0.1.0`
+- `santi1761/order-service-ecommerce-boot:0.1.0`
+
+---
+
+### 1.3 Jenkins
+
+**URL:** http://localhost:8090
+
+![Jenkins Dashboard](capturas/JenkinsNavegador.png)
+*Jenkins Dashboard - Interfaz principal*
+
+![Jenkins Console](capturas/JenkinsConsole.png)
+*Jenkins - Consola de ejecuci�n de builds*
+
+**Configuraci�n:**
+- Plugins instalados: Docker Pipeline, Kubernetes CLI, Git
+- Credenciales configuradas: `dockerhub-creds`
+- Pipelines creados: ecommerce-dev-pipeline
+
+**Acceso:**
+```powershell
+docker ps | findstr jenkins
+
+# Abrir en navegador
+start http://localhost:8090
 ```
-Now, as we have learned about different system components, then let's start.
 
-### System Boundary *Architecture* - μServices Landscape
+---
 
-![System Boundary](app-architecture.drawio.png)
+### 1.4 Kubernetes (Minikube)
 
-### Required software
+**Iniciar Minikube:**
+```powershell
+minikube start --driver=docker --cpus=4 --memory=6144
+```
 
-The following are the initially required software pieces:
+![Minikube Console](capturas/MinikubeConsole.png)
+*Minikube iniciado y pods desplegados en namespace dev*
 
-1. **Java 11**: JDK 11 LTS can be downloaded and installed from https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html
+**Comandos de verificaci�n:**
+```powershell
+# Ver estado de Minikube
+minikube status
 
-1. **Git**: it can be downloaded and installed from https://git-scm.com/downloads
+# Ver pods en namespace dev
+kubectl -n dev get pods
 
-1. **Maven**: Apache Maven is a software project management and comprehension tool, it can be downloaded from here https://maven.apache.org/download.cgi
+# Ver servicios
+kubectl -n dev get services
 
-1. **curl**: this command-line tool for testing HTTP-based APIs can be downloaded and installed from https://curl.haxx.se/download.html
+# Ver todos los namespaces
+kubectl get namespaces
+```
 
-1. **jq**: This command-line JSON processor can be downloaded and installed from https://stedolan.github.io/jq/download/
+**Namespaces configurados:**
+- `dev` - Desarrollo
+- `stage` - Pre-producci�n
+- `prod` - Producci�n
 
-1. **Spring Boot Initializer**: This *Initializer* generates *spring* boot project with just what you need to start quickly! Start from here https://start.spring.io/
+---
 
-1. **Docker**: The fastest way to containerize applications on your desktop, and you can download it from here [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+## 2. Microservicios Desplegados
 
-1. **Kubernetes**: We can install **minikube** for testing puposes https://minikube.sigs.k8s.io/docs/start/
+### 2.1 Service Discovery (Eureka)
 
-   > For each future stage, I will list the newly required software. 
+**Puerto:** 8761
+**URL:** http://localhost:8761
 
-Follow the installation guide for each software website link and check your software versions from the command line to verify that they are all installed correctly.
+![Eureka Dashboard](capturas/Eureka.png)
+*Eureka mostrando todos los microservicios registrados*
 
-## Using an IDE
+**Servicios registrados:**
+- API-GATEWAY
+- USER-SERVICE
+- PRODUCT-SERVICE
+- ORDER-SERVICE
+- PROXY-CLIENT
 
-I recommend that you work with your Java code using an IDE that supports the development of Spring Boot applications such as Spring Tool Suite or IntelliJ IDEA Ultimate Edition. So you can use the Spring Boot Dashboard to run the services, run each microservice test case, and many more.
+**Funci�n:**
+- Registro autom�tico de servicios
+- Descubrimiento de servicios
+- Health checking
+- Load balancing
 
-All that you want to do is just fire up your IDE **->** open or import the parent folder `ecommerce-microservice-backend-app`, and everything will be ready for you.
+---
 
-## Data Model
-### Entity-Relationship-Diagram
-![System Boundary](ecommerce-ERD.drawio.png)
+### 2.2 API Gateway
 
-## Playing With e-Commerce-boot Project
+**Puerto:** 8080
+**URL:** http://localhost:8080
 
-### Cloning It
+**Health Check:**
+```powershell
+curl http://localhost:8080/actuator/health
+```
 
-The first thing to do is to open **git bash** command line, and then simply you can clone the project under any of your favorite places as the following:
+![API Gateway Health](capturas/HealthNavegador.png)
+*Endpoint /actuator/health mostrando estado UP*
+
+**Funci�n:**
+- Punto de entrada �nico para todos los servicios
+- Routing din�mico basado en Eureka
+- Circuit breaker con Resilience4j
+- Rate limiting
+
+---
+
+### 2.3 User Service
+
+**Puerto:** 8700
+**Endpoints:** `/user-service/api/users`
+
+**Probar en navegador:**
+```
+http://localhost:8700/user-service/api/users
+```
+
+![User Service API](capturas/Api-usersNavegador.png)
+*GET /api/users retornando lista de usuarios en formato JSON*
+
+**Funcionalidad:**
+- CRUD de usuarios
+- Gesti�n de credenciales
+- Integraci�n con base de datos H2
+
+**Comandos:**
+```powershell
+# Obtener todos los usuarios
+curl http://localhost:8700/user-service/api/users
+
+# Obtener usuario por ID
+curl http://localhost:8700/user-service/api/users/1
+
+# Health check
+curl http://localhost:8700/user-service/actuator/health
+```
+
+---
+
+### 2.4 Product Service
+
+**Puerto:** 8500
+**Endpoints:** `/product-service/api/products`
+
+**Probar en navegador:**
+```
+http://localhost:8500/product-service/api/products
+```
+
+![Product Service API](capturas/Api-ProductsNavegador.png)
+*GET /api/products retornando cat�logo de productos*
+
+**Funcionalidad:**
+- CRUD de productos
+- Gesti�n de categor�as
+- Control de inventario (stock)
+- Validaci�n de SKU �nico
+
+**Comandos:**
+```powershell
+# Obtener todos los productos
+curl http://localhost:8500/product-service/api/products
+
+# Obtener producto por ID
+curl http://localhost:8500/product-service/api/products/1
+
+# Health check
+curl http://localhost:8500/product-service/actuator/health
+```
+
+---
+
+### 2.5 Order Service
+
+**Puerto:** 8300
+**Endpoints:** `/order-service/api/orders`
+
+**Funcionalidad:**
+- Gesti�n de �rdenes
+- Integraci�n con User Service
+- Integraci�n con Product Service
+- Validaci�n de stock antes de crear orden
+
+**Comandos:**
+```powershell
+curl http://localhost:8300/order-service/api/orders
+```
+
+---
+
+### 2.6 Zipkin - Distributed Tracing
+
+**Puerto:** 9411
+**URL:** http://localhost:9411
+
+**Funcionalidad:**
+- Trazabilidad distribuida entre microservicios
+- Visualizaci�n de latencia por servicio
+- Detecci�n de cuellos de botella
+
+---
+
+## 3. Pruebas Implementadas
+
+### 3.1 Pruebas Unitarias (15 tests)
+
+**Ubicaci�n:**
+- `user-service/src/test/java/com/selimhorri/app/helper/UserMappingHelperTest.java`
+- `product-service/src/test/java/com/selimhorri/app/helper/ProductMappingHelperTest.java`
+
+![Unit Tests Execution](capturas/UnitTest.png)
+*Ejecuci�n de pruebas unitarias - 15 tests PASSED*
+
+**Ejecutar:**
+```bash
+# En WSL2
+cd user-service
+../mvnw test -Dtest=UserMappingHelperTest
+
+cd ../product-service
+../mvnw test -Dtest=ProductMappingHelperTest
+```
+
+**Resultados:**
+```
+Tests run: 15
+Failures: 0
+Errors: 0
+Success Rate: 100%
+```
+
+**Cobertura:**
+- Mapeo de entidades a DTOs
+- Manejo de valores nulos
+- Validaci�n de relaciones entre objetos
+- Transformaciones de datos
+
+---
+
+### 3.2 Pruebas de Integraci�n (5 tests)
+
+**Ubicaci�n:**
+- `user-service/src/test/java/com/selimhorri/app/resource/UserResourceIntegrationTest.java`
+- `product-service/src/test/java/com/selimhorri/app/resource/ProductResourceIntegrationTest.java`
+
+![Integration Test - User Service](capturas/IntegrationTest.png)
+*Pruebas de integraci�n User Service - 3/3 PASSED*
+
+![Integration Test - Product Service](capturas/IntegrationTest2.png)
+*Pruebas de integraci�n Product Service - 2/2 PASSED*
+
+**Ejecutar:**
+```bash
+cd user-service
+../mvnw test -Dtest=UserResourceIntegrationTest
+
+cd ../product-service
+../mvnw test -Dtest=ProductResourceIntegrationTest
+```
+
+**Validaciones:**
+- REST Controllers (@SpringBootTest + MockMvc)
+- Serializaci�n/Deserializaci�n JSON
+- HTTP Status Codes (200, 201, 404)
+- Content-Type headers
+- Integraci�n con base de datos H2
+
+---
+
+### 3.3 Pruebas End-to-End (7 tests)
+
+**Ubicaci�n:** `tests/e2e/run-e2e-tests.sh`
+
+![E2E Tests Execution](capturas/E2Etest.png)
+*Pruebas E2E - 7/7 PASSED*
+
+**Ejecutar:**
+```bash
+cd tests/e2e
+chmod +x run-e2e-tests.sh
+./run-e2e-tests.sh
+```
+
+**Pruebas:**
+1. Health Check API Gateway
+2. Get All Products
+3. Get All Users
+4. Get All Orders
+5. Check Eureka Registration
+6. Zipkin Health Check
+7. Response Time Check (<1s) - 79ms
+
+**Script:**
+```bash
+#!/bin/bash
+echo "E2E TESTS - E-Commerce Microservices"
+
+# E2E-1: Health Check API Gateway
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/actuator/health | grep -q "200"
+
+# E2E-2: Get All Products
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8500/product-service/api/products | grep -q "200"
+
+```
+
+---
+
+### 3.4 Pruebas de Rendimiento (Locust)
+
+**Ubicaci�n:** `tests/performance/simple_load_test.py`
+
+![Locust Performance Test](capturas/LocustTest.png)
+*Resultados de pruebas de rendimiento con Locust*
+
+**Configuraci�n:**
+- Usuarios concurrentes: 25
+- Requests por usuario: 10
+- Total requests: 250
+
+**Resultados:**
+```
+Total Requests: 250
+Successful: 250 (100.0%)
+Failed: 0 (0.0%)
+Duration: 12.16 seconds
+Throughput: 20.57 requests/second
+
+Response Times (ms):
+  Average: 39.08
+  Median: 19.34
+  Min: 7.61
+  Max: 298.22
+  P95: 197.22
+  P99: 293.16
+```
+
+**M�tricas Clave:**
+
+| M�trica | Valor | Estado |
+|---------|-------|--------|
+| **Tasa de �xito** | 100% |  Excelente |
+| **Throughput** | 20.57 req/s |  Bueno |
+| **Tiempo Promedio** | 39.08 ms |  Excelente |
+| **P95** | 197.22 ms |  < 200ms |
+| **P99** | 293.16 ms |  < 300ms |
+
+**Ejecutar:**
+```bash
+cd tests/performance
+python3 simple_load_test.py
+cat results_summary.txt
+```
+
+**An�lisis:**
+-  **Estabilidad perfecta:** 0% de errores en 250 requests
+-  **Latencia excelente:** Promedio de 39ms
+-  **Consistencia:** P95 < 200ms
+-  **Sistema estable bajo carga concurrente**
+
+---
+
+## 4. Arquitectura del Sistema
+
+### 4.1 Estructura del Proyecto
+
+![Estructura de Carpetas](capturas/ProyectoCarpetas.png)
+*Organizaci�n del proyecto - Microservicios, K8s manifests, Tests, Pipelines*
+
+```
+ecommerce-microservice-backend-app/
+service-discovery/          # Eureka Server (8761)
+cloud-config/               # Config Server (9296)
+ api-gateway/                # Gateway (8080)
+proxy-client/               # Auth + Swagger (8900)
+ user-service/               # Users (8700)
+      src/test/java/
+ helper/             # Unit tests
+resource/           # Integration tests
+product-service/            # Products (8500)
+ src/test/java/
+ helper/             # Unit tests
+ resource/           # Integration tests
+order-service/              # Orders (8300)
+k8s/
+ namespaces.yaml
+ infra/                  # Infrastructure services
+zipkin.yaml
+eureka.yaml
+config-server.yaml
+apps/                   # Application services
+api-gateway.yaml
+ user-service.yaml
+ product-service.yaml
+ order-service.yaml
+tests/
+e2e/
+run-e2e-tests.sh   # 7 E2E tests
+performance/
+simple_load_test.py
+results_summary.txt
+Jenkinsfile                 # DEV pipeline
+Jenkinsfile.stage           # STAGE pipeline
+Jenkinsfile.master          # MASTER pipeline
+deploy-k8s-dev.ps1          # K8s deployment script
+capturas/                   # Screenshots
+Demo.mp4               # Video demostraci�n
+*.png                  # Evidencias
+README.md                   # Esta documentaci�n
+```
+
+
+---
+
+### 4.3 Flujo de Request
+
+**Ejemplo: GET /api/products**
+
+```
+1. Cliente � http://localhost:8080/product-service/api/products
+2. API Gateway recibe request
+3. Gateway consulta Eureka: �d�nde est� PRODUCT-SERVICE?
+4. Eureka responde: product-service:8500
+5. Gateway � Forward request � Product Service
+6. Product Service procesa y responde
+7. Gateway � Retorna respuesta al cliente
+8. Zipkin registra toda la traza
+```
+
+---
+
+## 5. Comandos de Ejecuci�n
+
+### 5.1 Iniciar Entorno Completo
+
+**Paso 1: Docker Desktop**
+```powershell
+# Abrir Docker Desktop (GUI)
+# Esperar que muestre "Running"
+```
+
+**Paso 2: Minikube**
+```powershell
+minikube start --driver=docker --cpus=4 --memory=6144
+minikube status
+```
+
+**Paso 3: Desplegar en Kubernetes**
+```powershell
+# Opci�n 1: Script automatizado
+.\deploy-k8s-dev.ps1
+
+# Opci�n 2: Manual
+kubectl apply -f k8s/namespaces.yaml
+kubectl apply -f k8s/infra/
+kubectl apply -f k8s/apps/
+
+# Verificar
+kubectl -n dev get pods
+kubectl -n dev get services
+```
+
+**Paso 4: Acceder a servicios (Port-forward)**
+```powershell
+# Abrir 4 ventanas de PowerShell
+
+# Ventana 1:
+kubectl -n dev port-forward svc/api-gateway 8080:8080
+
+# Ventana 2:
+kubectl -n dev port-forward svc/user-service 8700:8700
+
+# Ventana 3:
+kubectl -n dev port-forward svc/product-service 8500:8500
+
+# Ventana 4:
+kubectl -n dev port-forward svc/order-service 8300:8300
+```
+
+---
+
+### 5.2 Ejecutar Pruebas
+
+**Pruebas Unitarias:**
+```bash
+# En WSL2
+cd user-service
+../mvnw test -Dtest=UserMappingHelperTest
+
+cd ../product-service
+../mvnw test -Dtest=ProductMappingHelperTest
+```
+
+**Pruebas de Integraci�n:**
+```bash
+cd user-service
+../mvnw test -Dtest=UserResourceIntegrationTest
+
+cd ../product-service
+../mvnw test -Dtest=ProductResourceIntegrationTest
+```
+
+**Pruebas E2E:**
+```bash
+cd tests/e2e
+chmod +x run-e2e-tests.sh
+./run-e2e-tests.sh
+```
+
+**Pruebas de Rendimiento:**
+```bash
+cd tests/performance
+python3 simple_load_test.py
+cat results_summary.txt
+```
+
+---
+
+### 5.3 Comandos �tiles
+
+**Docker:**
+```powershell
+# Ver contenedores
+docker ps
+
+# Ver logs
+docker logs jenkins --tail=100
+docker logs <container-name> -f
+
+# Reiniciar contenedor
+docker restart jenkins
+```
+
+**Kubernetes:**
+```powershell
+# Ver recursos
+kubectl -n dev get all
+kubectl -n dev get pods
+kubectl -n dev get services
+
+# Ver logs de pod
+kubectl -n dev logs <pod-name>
+kubectl -n dev logs <pod-name> --tail=50 -f
+
+# Describir recurso (debug)
+kubectl -n dev describe pod <pod-name>
+
+# Port-forward
+kubectl -n dev port-forward svc/api-gateway 8080:8080
+```
+
+**Minikube:**
+```powershell
+# Dashboard
+minikube dashboard
+
+# Ver IP
+minikube ip
+
+# Ver logs
+minikube logs
+```
+
+---
+
+## 6. Evidencias y Capturas
+
+### 6.1 Infraestructura
+
+| Captura | Descripci�n |
+|---------|-------------|
+| ![Docker Desktop 1](capturas/DockerDesktop1.png) | Docker Desktop - Contenedores en ejecuci�n |
+| ![Docker Desktop 2](capturas/DockerDesktop2.png) | Docker Desktop - Im�genes construidas |
+| ![Docker Console](capturas/DockerConsole.png) | Comando `docker ps` - Lista de contenedores |
+| ![Docker Hub](capturas/DockerHub.png) | Registry Docker Hub con im�genes publicadas |
+| ![Jenkins Navegador](capturas/JenkinsNavegador.png) | Jenkins Dashboard - Interfaz web |
+| ![Jenkins Console](capturas/JenkinsConsole.png) | Jenkins - Consola de builds |
+| ![Minikube Console](capturas/MinikubeConsole.png) | Minikube - Pods desplegados |
+
+---
+
+### 6.2 Microservicios en Ejecuci�n
+
+| Captura | Descripci�n |
+|---------|-------------|
+| ![Eureka](capturas/Eureka.png) | Eureka Dashboard - Servicios registrados |
+| ![Health Check](capturas/HealthNavegador.png) | API Gateway - Endpoint /actuator/health |
+| ![Users API](capturas/Api-usersNavegador.png) | User Service - GET /api/users |
+| ![Products API](capturas/Api-ProductsNavegador.png) | Product Service - GET /api/products |
+
+---
+
+### 6.3 Pruebas
+
+| Captura | Descripci�n |
+|---------|-------------|
+| ![Unit Tests](capturas/UnitTest.png) | Ejecuci�n de 15 pruebas unitarias - 100% �xito |
+| ![Integration Test 1](capturas/IntegrationTest.png) | User Service - 3 pruebas de integraci�n PASSED |
+| ![Integration Test 2](capturas/IntegrationTest2.png) | Product Service - 2 pruebas de integraci�n PASSED |
+| ![E2E Tests](capturas/E2Etest.png) | Pruebas End-to-End - 7/7 PASSED |
+| ![Locust Test](capturas/LocustTest.png) | Pruebas de rendimiento - 250 requests, 100% �xito |
+
+---
+
+### 6.4 Estructura del Proyecto
+
+| Captura | Descripci�n |
+|---------|-------------|
+| ![Proyecto Carpetas](capturas/ProyectoCarpetas.png) | Organizaci�n completa del proyecto |
+
+---
+
+## <� Video Demostraci�n Completa
+
+**Archivo:** `capturas/Demo.mp4`
+
+El video demuestra:
+1.  Docker Desktop con todos los contenedores corriendo
+2.  Jenkins Dashboard y configuraci�n
+3.  Minikube y pods desplegados en Kubernetes
+4.  Eureka mostrando servicios registrados
+5.  APIs funcionando (Users, Products, Health checks)
+6.  Ejecuci�n de pruebas unitarias
+7.  Ejecuci�n de pruebas de integraci�n
+8.  Ejecuci�n de pruebas E2E
+9.  Resultados de pruebas de rendimiento
+10.  Estructura completa del proyecto
+
+**Ver video:** [Demo.mp4](capturas/Demo.mp4)
+
+---
+
+## Resumen de Cumplimiento
+
+### Requisitos del Enunciado
+
+| Requisito | Estado | Evidencia |
+|-----------|--------|-----------|
+| **1. Configurar Jenkins, Docker, Kubernetes (10%)** |  | Capturas: JenkinsNavegador.png, DockerDesktop1.png, MinikubeConsole.png |
+| **2. Pipelines build (dev) e6 microservicios (15%)** |  | 7 servicios: Eureka, Config, Gateway, Proxy, User, Product, Order |
+| **3a. e5 Pruebas Unitarias (30%)** |  | 15 pruebas - UnitTest.png |
+| **3b. e5 Pruebas Integraci�n (30%)** | | 5 pruebas - IntegrationTest.png, IntegrationTest2.png |
+| **3c. e5 Pruebas E2E (30%)** |  | 7 pruebas - E2Etest.png |
+| **3d. Pruebas Rendimiento Locust (30%)** |  | 250 requests - LocustTest.png |
+| **4. Pipeline STAGE en K8s (15%)** | | Jenkinsfile.stage + manifiestos K8s |
+| **5. Pipeline MASTER + Release Notes (15%)** |  | Jenkinsfile.master con generaci�n autom�tica |
+| **6. Documentaci�n + Reporte + ZIP (15%)** |  | README.md + Demo.mp4 + Capturas |
+
+**Total:**  **Todos los requisitos cumplidos**
+
+---
+
+## Endpoints de Prueba
+
+### Servicios en Docker Compose
 
 ```bash
-> git clone https://github.com/SelimHorri/ecommerce-microservice-backend-app.git
+# Eureka
+http://localhost:8761
+
+# API Gateway Health
+http://localhost:8080/actuator/health
+
+# User Service
+http://localhost:8700/user-service/api/users
+http://localhost:8700/user-service/actuator/health
+
+# Product Service
+http://localhost:8500/product-service/api/products
+http://localhost:8500/product-service/actuator/health
+
+# Order Service
+http://localhost:8300/order-service/api/orders
+
+# Zipkin
+http://localhost:9411
+
+# Jenkins
+http://localhost:8090
 ```
 
-### Build & Test Them In Isolation
-
-To build and run the test cases for each service & shared modules in the project, we need to do the following:
-
-#### Build & Test µServices
-Now it is the time to build our **10 microservices** and run each service integration test in
- isolation by running the following commands:
+### Servicios en Kubernetes (con port-forward)
 
 ```bash
-selim@:~/ecommerce-microservice-backend-app$ ./mvnw clean package 
+# Despu�s de ejecutar port-forward
+http://localhost:8080/actuator/health
+http://localhost:8700/user-service/api/users
+http://localhost:8500/product-service/api/products
 ```
 
-All build commands and test suite for each microservice should run successfully, and the final output should be like this:
+---
 
-```bash
----------------< com.selimhorri.app:ecommerce-microservice-backend >-----------
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for ecommerce-microservice-backend 0.1.0:
-[INFO] 
-[INFO] ecommerce-microservice-backend ..................... SUCCESS [  0.548 s]
-[INFO] service-discovery .................................. SUCCESS [  3.126 s]
-[INFO] cloud-config ....................................... SUCCESS [  1.595 s]
-[INFO] api-gateway ........................................ SUCCESS [  1.697 s]
-[INFO] proxy-client ....................................... SUCCESS [  3.632 s]
-[INFO] user-service ....................................... SUCCESS [  2.546 s]
-[INFO] product-service .................................... SUCCESS [  2.214 s]
-[INFO] favourite-service .................................. SUCCESS [  2.072 s]
-[INFO] order-service ...................................... SUCCESS [  2.241 s]
-[INFO] shipping-service ................................... SUCCESS [  2.197 s]
-[INFO] payment-service .................................... SUCCESS [  2.006 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  24.156 s
-[INFO] Finished at: 2021-12-29T19:52:57+01:00
-[INFO] ------------------------------------------------------------------------
-```
+## Tecnolog�as Utilizadas
 
-### Running Them All
-Now it's the time to run all of our Microservices, and it's straightforward just run the following `docker-compose` commands:
+**Backend:**
+- Java 11
+- Spring Boot 2.5.7
+- Spring Cloud 2020.0.4
+- Maven
 
-```bash
-selim@:~/ecommerce-microservice-backend-app$ docker-compose -f compose.yml up
-```
+**Infraestructura:**
+- Docker & Docker Compose
+- Kubernetes (Minikube)
+- Jenkins
 
-All the **services**, **databases**, and **messaging service** will run in parallel in detach mode (option `-d`), and command output will print to the console the following:
+**Testing:**
+- JUnit 5
+- Mockito
+- Spring Boot Test
+- MockMvc
+- Bash scripts (E2E)
+- Python + Locust (Performance)
 
-```bash
-Creating network "ecommerce-microservice-backend-app_default" with the default driver
-Creating ecommerce-microservice-backend-app_api-gateway-container_1       ... done
-Creating ecommerce-microservice-backend-app_favourite-service-container_1 ... done
-Creating ecommerce-microservice-backend-app_service-discovery-container_1 ... done
-Creating ecommerce-microservice-backend-app_shipping-service-container_1  ... done
-Creating ecommerce-microservice-backend-app_order-service-container_1     ... done
-Creating ecommerce-microservice-backend-app_user-service-container_1      ... done
-Creating ecommerce-microservice-backend-app_payment-service-container_1   ... done
-Creating ecommerce-microservice-backend-app_product-service-container_1   ... done
-Creating ecommerce-microservice-backend-app_proxy-client-container_1      ... done
-Creating ecommerce-microservice-backend-app_zipkin-container_1            ... done
-Creating ecommerce-microservice-backend-app_cloud-config-container_1      ... done
-```
-### Access proxy-client APIs
-You can manually test `proxy-client` APIs throughout its **Swagger** interface at the following
- URL [https://localhost:8900/swagger-ui.html](https://localhost:8900/swagger-ui.html).
-### Access Service Discovery Server (Eureka)
-If you would like to access the Eureka service discovery point to this URL [http://localhosts:8761/eureka](https://localhost:8761/eureka) to see all the services registered inside it. 
+**Observabilidad:**
+- Zipkin (Distributed Tracing)
+- Spring Boot Actuator
+- Eureka Dashboard
 
-### Access user-service APIs
- URL [https://localhost:8700/swagger-ui.html](https://localhost:8700/swagger-ui.html).
+---
 
-<!--
-Note that it is accessed through API Gateway and is secured. Therefore the browser will ask you for `username:mt` and `password:p,` write them to the dialog, and you will access it. This type of security is a **basic form security**.
--->
-The **API Gateway** and **Store Service** both act as a *resource server*. <!--To know more about calling Store API in a secure way you can check the `test-em-all.sh` script on how I have changed the calling of the services using **OAuth2** security.-->
+## Conclusiones
 
-#### Check all **Spring Boot Actuator** exposed metrics http://localhost:8080/app/actuator/metrics:
+### Logros
 
-```bash
-{
-    "names": [
-        "http.server.requests",
-        "jvm.buffer.count",
-        "jvm.buffer.memory.used",
-        "jvm.buffer.total.capacity",
-        "jvm.classes.loaded",
-        "jvm.classes.unloaded",
-        "jvm.gc.live.data.size",
-        "jvm.gc.max.data.size",
-        "jvm.gc.memory.allocated",
-        "jvm.gc.memory.promoted",
-        "jvm.gc.pause",
-        "jvm.memory.committed",
-        "jvm.memory.max",
-        "jvm.memory.used",
-        "jvm.threads.daemon",
-        "jvm.threads.live",
-        "jvm.threads.peak",
-        "jvm.threads.states",
-        "logback.events",
-        "process.cpu.usage",
-        "process.files.max",
-        "process.files.open",
-        "process.start.time",
-        "process.uptime",
-        "resilience4j.circuitbreaker.buffered.calls",
-        "resilience4j.circuitbreaker.calls",
-        "resilience4j.circuitbreaker.failure.rate",
-        "resilience4j.circuitbreaker.not.permitted.calls",
-        "resilience4j.circuitbreaker.slow.call.rate",
-        "resilience4j.circuitbreaker.slow.calls",
-        "resilience4j.circuitbreaker.state",
-        "system.cpu.count",
-        "system.cpu.usage",
-        "system.load.average.1m",
-        "tomcat.sessions.active.current",
-        "tomcat.sessions.active.max",
-        "tomcat.sessions.alive.max",
-        "tomcat.sessions.created",
-        "tomcat.sessions.expired",
-        "tomcat.sessions.rejected",
-        "zipkin.reporter.messages",
-        "zipkin.reporter.messages.dropped",
-        "zipkin.reporter.messages.total",
-        "zipkin.reporter.queue.bytes",
-        "zipkin.reporter.queue.spans",
-        "zipkin.reporter.spans",
-        "zipkin.reporter.spans.dropped",
-        "zipkin.reporter.spans.total"
-    ]
-}
-```
+1.  **Arquitectura de Microservicios completa** con 7 servicios comunicandose
+2.  **Containerizacion exitosa** con Docker
+3.  **Orquestacion en Kubernetes** con Minikube
+4.  **CI/CD con Jenkins** implementado
+5.  **Testing exhaustivo** (15 unitarias + 5 integraci�n + 7 E2E + rendimiento)
+6.  **100% de pruebas pasando** sin errores
+7. **Observabilidad** con Zipkin y Actuator
+8.  **Documentacion completa** con evidencias
 
-#### Prometheus exposed metrics at http://localhost:8080/app/actuator/prometheus
+### M�tricas Destacadas
 
-```bash
-# HELP resilience4j_circuitbreaker_not_permitted_calls_total Total number of not permitted calls
-# TYPE resilience4j_circuitbreaker_not_permitted_calls_total counter
-resilience4j_circuitbreaker_not_permitted_calls_total{kind="not_permitted",name="proxyService",} 0.0
-# HELP jvm_gc_live_data_size_bytes Size of long-lived heap memory pool after reclamation
-# TYPE jvm_gc_live_data_size_bytes gauge
-jvm_gc_live_data_size_bytes 3721880.0
-# HELP jvm_gc_pause_seconds Time spent in GC pause
-# TYPE jvm_gc_pause_seconds summary
-jvm_gc_pause_seconds_count{action="end of minor GC",cause="Metadata GC Threshold",} 1.0
-jvm_gc_pause_seconds_sum{action="end of minor GC",cause="Metadata GC Threshold",} 0.071
-jvm_gc_pause_seconds_count{action="end of minor GC",cause="G1 Evacuation Pause",} 6.0
-jvm_gc_pause_seconds_sum{action="end of minor GC",cause="G1 Evacuation Pause",} 0.551
-# HELP jvm_gc_pause_seconds_max Time spent in GC pause
-# TYPE jvm_gc_pause_seconds_max gauge
-jvm_gc_pause_seconds_max{action="end of minor GC",cause="Metadata GC Threshold",} 0.071
-jvm_gc_pause_seconds_max{action="end of minor GC",cause="G1 Evacuation Pause",} 0.136
-# HELP system_cpu_usage The "recent cpu usage" for the whole system
-# TYPE system_cpu_usage gauge
-system_cpu_usage 0.4069206655413552
-# HELP jvm_buffer_total_capacity_bytes An estimate of the total capacity of the buffers in this pool
-# TYPE jvm_buffer_total_capacity_bytes gauge
-jvm_buffer_total_capacity_bytes{id="mapped",} 0.0
-jvm_buffer_total_capacity_bytes{id="direct",} 24576.0
-# HELP zipkin_reporter_spans_dropped_total Spans dropped (failed to report)
-# TYPE zipkin_reporter_spans_dropped_total counter
-zipkin_reporter_spans_dropped_total 4.0
-# HELP zipkin_reporter_spans_bytes_total Total bytes of encoded spans reported
-# TYPE zipkin_reporter_spans_bytes_total counter
-zipkin_reporter_spans_bytes_total 1681.0
-# HELP tomcat_sessions_active_current_sessions  
-# TYPE tomcat_sessions_active_current_sessions gauge
-tomcat_sessions_active_current_sessions 0.0
-# HELP jvm_classes_loaded_classes The number of classes that are currently loaded in the Java virtual machine
-# TYPE jvm_classes_loaded_classes gauge
-jvm_classes_loaded_classes 13714.0
-# HELP process_files_open_files The open file descriptor count
-# TYPE process_files_open_files gauge
-process_files_open_files 17.0
-# HELP resilience4j_circuitbreaker_slow_call_rate The slow call of the circuit breaker
-# TYPE resilience4j_circuitbreaker_slow_call_rate gauge
-resilience4j_circuitbreaker_slow_call_rate{name="proxyService",} -1.0
-# HELP system_cpu_count The number of processors available to the Java virtual machine
-# TYPE system_cpu_count gauge
-system_cpu_count 8.0
-# HELP jvm_threads_daemon_threads The current number of live daemon threads
-# TYPE jvm_threads_daemon_threads gauge
-jvm_threads_daemon_threads 21.0
-# HELP zipkin_reporter_messages_total Messages reported (or attempted to be reported)
-# TYPE zipkin_reporter_messages_total counter
-zipkin_reporter_messages_total 2.0
-# HELP zipkin_reporter_messages_dropped_total  
-# TYPE zipkin_reporter_messages_dropped_total counter
-zipkin_reporter_messages_dropped_total{cause="ResourceAccessException",} 2.0
-# HELP zipkin_reporter_messages_bytes_total Total bytes of messages reported
-# TYPE zipkin_reporter_messages_bytes_total counter
-zipkin_reporter_messages_bytes_total 1368.0
-# HELP http_server_requests_seconds  
-# TYPE http_server_requests_seconds summary
-http_server_requests_seconds_count{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/metrics",} 1.0
-http_server_requests_seconds_sum{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/metrics",} 1.339804427
-http_server_requests_seconds_count{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 1.0
-http_server_requests_seconds_sum{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 0.053689381
-# HELP http_server_requests_seconds_max  
-# TYPE http_server_requests_seconds_max gauge
-http_server_requests_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/metrics",} 1.339804427
-http_server_requests_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 0.053689381
-# HELP resilience4j_circuitbreaker_slow_calls The number of slow successful which were slower than a certain threshold
-# TYPE resilience4j_circuitbreaker_slow_calls gauge
-resilience4j_circuitbreaker_slow_calls{kind="successful",name="proxyService",} 0.0
-resilience4j_circuitbreaker_slow_calls{kind="failed",name="proxyService",} 0.0
-# HELP jvm_classes_unloaded_classes_total The total number of classes unloaded since the Java virtual machine has started execution
-# TYPE jvm_classes_unloaded_classes_total counter
-jvm_classes_unloaded_classes_total 0.0
-# HELP process_files_max_files The maximum file descriptor count
-# TYPE process_files_max_files gauge
-process_files_max_files 1048576.0
-# HELP resilience4j_circuitbreaker_calls_seconds Total number of successful calls
-# TYPE resilience4j_circuitbreaker_calls_seconds summary
-resilience4j_circuitbreaker_calls_seconds_count{kind="successful",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_sum{kind="successful",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_count{kind="failed",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_sum{kind="failed",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_count{kind="ignored",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_sum{kind="ignored",name="proxyService",} 0.0
-# HELP resilience4j_circuitbreaker_calls_seconds_max Total number of successful calls
-# TYPE resilience4j_circuitbreaker_calls_seconds_max gauge
-resilience4j_circuitbreaker_calls_seconds_max{kind="successful",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_max{kind="failed",name="proxyService",} 0.0
-resilience4j_circuitbreaker_calls_seconds_max{kind="ignored",name="proxyService",} 0.0
-# HELP zipkin_reporter_spans_total Spans reported
-# TYPE zipkin_reporter_spans_total counter
-zipkin_reporter_spans_total 5.0
-# HELP zipkin_reporter_queue_bytes Total size of all encoded spans queued for reporting
-# TYPE zipkin_reporter_queue_bytes gauge
-zipkin_reporter_queue_bytes 0.0
-# HELP tomcat_sessions_expired_sessions_total  
-# TYPE tomcat_sessions_expired_sessions_total counter
-tomcat_sessions_expired_sessions_total 0.0
-# HELP tomcat_sessions_alive_max_seconds  
-# TYPE tomcat_sessions_alive_max_seconds gauge
-tomcat_sessions_alive_max_seconds 0.0
-# HELP process_uptime_seconds The uptime of the Java virtual machine
-# TYPE process_uptime_seconds gauge
-process_uptime_seconds 224.402
-# HELP tomcat_sessions_active_max_sessions  
-# TYPE tomcat_sessions_active_max_sessions gauge
-tomcat_sessions_active_max_sessions 0.0
-# HELP process_cpu_usage The "recent cpu usage" for the Java Virtual Machine process
-# TYPE process_cpu_usage gauge
-process_cpu_usage 5.625879043600563E-4
-# HELP jvm_gc_memory_promoted_bytes_total Count of positive increases in the size of the old generation memory pool before GC to after GC
-# TYPE jvm_gc_memory_promoted_bytes_total counter
-jvm_gc_memory_promoted_bytes_total 1.7851088E7
-# HELP logback_events_total Number of error level events that made it to the logs
-# TYPE logback_events_total counter
-logback_events_total{level="warn",} 5.0
-logback_events_total{level="debug",} 79.0
-logback_events_total{level="error",} 0.0
-logback_events_total{level="trace",} 0.0
-logback_events_total{level="info",} 60.0
-# HELP tomcat_sessions_created_sessions_total  
-# TYPE tomcat_sessions_created_sessions_total counter
-tomcat_sessions_created_sessions_total 0.0
-# HELP jvm_threads_live_threads The current number of live threads including both daemon and non-daemon threads
-# TYPE jvm_threads_live_threads gauge
-jvm_threads_live_threads 25.0
-# HELP jvm_threads_states_threads The current number of threads having NEW state
-# TYPE jvm_threads_states_threads gauge
-jvm_threads_states_threads{state="runnable",} 6.0
-jvm_threads_states_threads{state="blocked",} 0.0
-jvm_threads_states_threads{state="waiting",} 8.0
-jvm_threads_states_threads{state="timed-waiting",} 11.0
-jvm_threads_states_threads{state="new",} 0.0
-jvm_threads_states_threads{state="terminated",} 0.0
-# HELP tomcat_sessions_rejected_sessions_total  
-# TYPE tomcat_sessions_rejected_sessions_total counter
-tomcat_sessions_rejected_sessions_total 0.0
-# HELP process_start_time_seconds Start time of the process since unix epoch.
-# TYPE process_start_time_seconds gauge
-process_start_time_seconds 1.64088634006E9
-# HELP resilience4j_circuitbreaker_buffered_calls The number of buffered failed calls stored in the ring buffer
-# TYPE resilience4j_circuitbreaker_buffered_calls gauge
-resilience4j_circuitbreaker_buffered_calls{kind="successful",name="proxyService",} 0.0
-resilience4j_circuitbreaker_buffered_calls{kind="failed",name="proxyService",} 0.0
-# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management
-# TYPE jvm_memory_max_bytes gauge
-jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.22908672E8
-jvm_memory_max_bytes{area="heap",id="G1 Survivor Space",} -1.0
-jvm_memory_max_bytes{area="heap",id="G1 Old Gen",} 5.182062592E9
-jvm_memory_max_bytes{area="nonheap",id="Metaspace",} -1.0
-jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 5836800.0
-jvm_memory_max_bytes{area="heap",id="G1 Eden Space",} -1.0
-jvm_memory_max_bytes{area="nonheap",id="Compressed Class Space",} 1.073741824E9
-jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 1.22912768E8
-# HELP jvm_memory_committed_bytes The amount of memory in bytes that is committed for the Java virtual machine to use
-# TYPE jvm_memory_committed_bytes gauge
-jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.6646144E7
-jvm_memory_committed_bytes{area="heap",id="G1 Survivor Space",} 2.4117248E7
-jvm_memory_committed_bytes{area="heap",id="G1 Old Gen",} 1.7301504E8
-jvm_memory_committed_bytes{area="nonheap",id="Metaspace",} 7.6857344E7
-jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 2555904.0
-jvm_memory_committed_bytes{area="heap",id="G1 Eden Space",} 2.71581184E8
-jvm_memory_committed_bytes{area="nonheap",id="Compressed Class Space",} 1.0354688E7
-jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 6619136.0
-# HELP jvm_memory_used_bytes The amount of used memory
-# TYPE jvm_memory_used_bytes gauge
-jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.6585088E7
-jvm_memory_used_bytes{area="heap",id="G1 Survivor Space",} 2.4117248E7
-jvm_memory_used_bytes{area="heap",id="G1 Old Gen",} 2.0524392E7
-jvm_memory_used_bytes{area="nonheap",id="Metaspace",} 7.4384552E7
-jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 1261696.0
-jvm_memory_used_bytes{area="heap",id="G1 Eden Space",} 2.5165824E7
-jvm_memory_used_bytes{area="nonheap",id="Compressed Class Space",} 9365664.0
-jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 6604416.0
-# HELP system_load_average_1m The sum of the number of runnable entities queued to available processors and the number of runnable entities running on the available processors averaged over a period of time
-# TYPE system_load_average_1m gauge
-system_load_average_1m 8.68
-# HELP resilience4j_circuitbreaker_state The states of the circuit breaker
-# TYPE resilience4j_circuitbreaker_state gauge
-resilience4j_circuitbreaker_state{name="proxyService",state="forced_open",} 0.0
-resilience4j_circuitbreaker_state{name="proxyService",state="closed",} 1.0
-resilience4j_circuitbreaker_state{name="proxyService",state="disabled",} 0.0
-resilience4j_circuitbreaker_state{name="proxyService",state="open",} 0.0
-resilience4j_circuitbreaker_state{name="proxyService",state="half_open",} 0.0
-resilience4j_circuitbreaker_state{name="proxyService",state="metrics_only",} 0.0
-# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool
-# TYPE jvm_buffer_memory_used_bytes gauge
-jvm_buffer_memory_used_bytes{id="mapped",} 0.0
-jvm_buffer_memory_used_bytes{id="direct",} 24576.0
-# HELP resilience4j_circuitbreaker_failure_rate The failure rate of the circuit breaker
-# TYPE resilience4j_circuitbreaker_failure_rate gauge
-resilience4j_circuitbreaker_failure_rate{name="proxyService",} -1.0
-# HELP zipkin_reporter_queue_spans Spans queued for reporting
-# TYPE zipkin_reporter_queue_spans gauge
-zipkin_reporter_queue_spans 0.0
-# HELP jvm_gc_memory_allocated_bytes_total Incremented for an increase in the size of the (young) heap memory pool after one GC to before the next
-# TYPE jvm_gc_memory_allocated_bytes_total counter
-jvm_gc_memory_allocated_bytes_total 1.402994688E9
-# HELP jvm_buffer_count_buffers An estimate of the number of buffers in the pool
-# TYPE jvm_buffer_count_buffers gauge
-jvm_buffer_count_buffers{id="mapped",} 0.0
-jvm_buffer_count_buffers{id="direct",} 3.0
-# HELP jvm_threads_peak_threads The peak live thread count since the Java virtual machine started or peak was reset
-# TYPE jvm_threads_peak_threads gauge
-jvm_threads_peak_threads 25.0
-# HELP jvm_gc_max_data_size_bytes Max size of long-lived heap memory pool
-# TYPE jvm_gc_max_data_size_bytes gauge
-jvm_gc_max_data_size_bytes 5.182062592E9
-```
+- **Estabilidad:** 100% de exito en pruebas de carga (250 requests)
+- **Rendimiento:** Tiempo de respuesta promedio de 39.08 ms
+- **Throughput:** 20.57 requests/segundo
+- **Calidad:** 0% tasa de errores
 
-#### Check All Services Health
-From ecommerce front Service proxy we can check all the core services health when you have all the
- microservices up and running using Docker Compose,
-```bash
-selim@:~/ecommerce-microservice-backend-app$ curl -k https://localhost:8443/actuator/health -s | jq .components."\"Core Microservices\""
-```
-This will result in the following response:
-```json
-{
-    "status": "UP",
-    "components": {
-        "circuitBreakers": {
-            "status": "UP",
-            "details": {
-                "proxyService": {
-                    "status": "UP",
-                    "details": {
-                        "failureRate": "-1.0%",
-                        "failureRateThreshold": "50.0%",
-                        "slowCallRate": "-1.0%",
-                        "slowCallRateThreshold": "100.0%",
-                        "bufferedCalls": 0,
-                        "slowCalls": 0,
-                        "slowFailedCalls": 0,
-                        "failedCalls": 0,
-                        "notPermittedCalls": 0,
-                        "state": "CLOSED"
-                    }
-                }
-            }
-        },
-        "clientConfigServer": {
-            "status": "UNKNOWN",
-            "details": {
-                "error": "no property sources located"
-            }
-        },
-        "discoveryComposite": {
-            "status": "UP",
-            "components": {
-                "discoveryClient": {
-                    "status": "UP",
-                    "details": {
-                        "services": [
-                            "proxy-client",
-                            "api-gateway",
-                            "cloud-config",
-                            "product-service",
-                            "user-service",
-                            "favourite-service",
-                            "order-service",
-                            "payment-service",
-                            "shipping-service"
-                        ]
-                    }
-                },
-                "eureka": {
-                    "description": "Remote status from Eureka server",
-                    "status": "UP",
-                    "details": {
-                        "applications": {
-                            "FAVOURITE-SERVICE": 1,
-                            "PROXY-CLIENT": 1,
-                            "API-GATEWAY": 1,
-                            "PAYMENT-SERVICE": 1,
-                            "ORDER-SERVICE": 1,
-                            "CLOUD-CONFIG": 1,
-                            "PRODUCT-SERVICE": 1,
-                            "SHIPPING-SERVICE": 1,
-                            "USER-SERVICE": 1
-                        }
-                    }
-                }
-            }
-        },
-        "diskSpace": {
-            "status": "UP",
-            "details": {
-                "total": 981889826816,
-                "free": 325116776448,
-                "threshold": 10485760,
-                "exists": true
-            }
-        },
-        "ping": {
-            "status": "UP"
-        },
-        "refreshScope": {
-            "status": "UP"
-        }
-    }
-}
-```
-### Testing Them All
-Now it's time to test all the application functionality as one part. To do so just run
- the following automation test script:
+### Aprendizajes
 
-```bash
-selim@:~/ecommerce-microservice-backend-app$ ./test-em-all.sh start
-```
-> You can use `stop` switch with `start`, that will 
->1. start docker, 
->2. run the tests, 
->3. stop the docker instances.
+1. Configuracion de Service Discovery con Eureka
+2. Implementacion de API Gateway con Spring Cloud Gateway
+3. Despliegue de microservicios en Kubernetes
+4. Estrategias de testing multinivel
+5. Analisis de metricas de rendimiento
 
-The result will look like this:
+---
 
-```bash
-Starting 'ecommerce-microservice-backend-app' for [Blackbox] testing...
+## Autor
 
-Start Tests: Tue, May 31, 2020 2:09:36 AM
-HOST=localhost
-PORT=8080
-Restarting the test environment...
-$ docker-compose -p -f compose.yml down --remove-orphans
-$ docker-compose -p -f compose.yml up -d
-Wait for: curl -k https://localhost:8080/actuator/health... , retry #1 , retry #2, {"status":"UP"} DONE, continues...
-Test OK (HTTP Code: 200)
-...
-Test OK (actual value: 1)
-Test OK (actual value: 3)
-Test OK (actual value: 3)
-Test OK (HTTP Code: 404, {"httpStatus":"NOT_FOUND","message":"No product found for productId: 13","path":"/app/api/products/20","time":"2020-04-12@12:34:25.144+0000"})
-...
-Test OK (actual value: 3)
-Test OK (actual value: 0)
-Test OK (HTTP Code: 422, {"httpStatus":"UNPROCESSABLE_ENTITY","message":"Invalid productId: -1","path":"/app/api/products/-1","time":"2020-04-12@12:34:26.243+0000"})
-Test OK (actual value: "Invalid productId: -1")
-Test OK (HTTP Code: 400, {"timestamp":"2020-04-12T12:34:26.471+00:00","path":"/app/api/products/invalidProductId","status":400,"error":"Bad Request","message":"Type mismatch.","requestId":"044dcdf2-13"})
-Test OK (actual value: "Type mismatch.")
-Test OK (HTTP Code: 401, )
-Test OK (HTTP Code: 200)
-Test OK (HTTP Code: 403, )
-Start Circuit Breaker tests!
-Test OK (actual value: CLOSED)
-Test OK (HTTP Code: 500, {"timestamp":"2020-05-26T00:09:48.784+00:00","path":"/app/api/products/2","status":500,"error":"Internal Server Error","message":"Did not observe any item or terminal signal within 2000ms in 'onErrorResume' (and no fallback has been configured)","requestId":"4aa9f5e8-119"})
-...
-Test OK (actual value: Did not observe any item or terminal signal within 2000ms)
-Test OK (HTTP Code: 200)
-Test OK (actual value: Fallback product2)
-Test OK (HTTP Code: 200)
-Test OK (actual value: Fallback product2)
-Test OK (HTTP Code: 404, {"httpStatus":"NOT_FOUND","message":"Product Id: 14 not found in fallback cache!","path":"/app/api/products/14","timestamp":"2020-05-26@00:09:53.998+0000"})
-...
-Test OK (actual value: product name C)
-Test OK (actual value: CLOSED)
-Test OK (actual value: CLOSED_TO_OPEN)
-Test OK (actual value: OPEN_TO_HALF_OPEN)
-Test OK (actual value: HALF_OPEN_TO_CLOSED)
-End, all tests OK: Tue, May 31, 2020 2:10:09 AM
-```
-### Tracking the services with Zipkin
-Now, you can now track Microservices interactions throughout Zipkin UI from the following link:
-[http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
-![Zipkin UI](zipkin-dash.png)
+**Santiago Arboleda Velasco**
+Ingenieria de Software 5
+Universidad
+Noviembre 2025
 
-### Closing The Story
-
-Finally, to close the story, we need to shut down Microservices manually service by service, hahaha just kidding, run the following command to shut them all:
-
-```bash
-selim@:~/ecommerce-microservice-backend-app$ docker-compose -f compose.yml down --remove-orphans
-```
- And you should see output like the following:
-
-```bash
-Removing ecommerce-microservice-backend-app_payment-service-container_1   ... done
-Removing ecommerce-microservice-backend-app_zipkin-container_1            ... done
-Removing ecommerce-microservice-backend-app_service-discovery-container_1 ... done
-Removing ecommerce-microservice-backend-app_product-service-container_1   ... done
-Removing ecommerce-microservice-backend-app_cloud-config-container_1      ... done
-Removing ecommerce-microservice-backend-app_proxy-client-container_1      ... done
-Removing ecommerce-microservice-backend-app_order-service-container_1     ... done
-Removing ecommerce-microservice-backend-app_user-service-container_1      ... done
-Removing ecommerce-microservice-backend-app_shipping-service-container_1  ... done
-Removing ecommerce-microservice-backend-app_api-gateway-container_1       ... done
-Removing ecommerce-microservice-backend-app_favourite-service-container_1 ... done
-Removing network ecommerce-microservice-backend-app_default
-```
-### The End
-In the end, I hope you enjoyed the application and find it useful, as I did when I was developing it. 
-If you would like to enhance, please: 
-- **Open PRs**, 
-- Give **feedback**, 
-- Add **new suggestions**, and
-- Finally, give it a 🌟.
-
-*Happy Coding ...* 🙂
+---
