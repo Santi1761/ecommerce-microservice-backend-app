@@ -1,4 +1,3 @@
-
 server:
   port: 8761
 
@@ -27,4 +26,3 @@ logging:
             rest: INFO
             jpa: INFO
             orm: INFO
-

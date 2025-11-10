@@ -1,0 +1,80 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.selimhorri:product-service >-------------------
+[INFO] Building product-service 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ product-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ product-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ product-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ product-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ product-service ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.selimhorri.app.service.ProductServiceImplTest
+01:55:54.412 [main] INFO com.selimhorri.app.service.impl.ProductServiceImpl - *** ProductDto, service; save product *
+01:55:57.107 [main] INFO com.selimhorri.app.service.impl.ProductServiceImpl - *** ProductDto List, service; fetch all products *
+01:55:57.895 [main] INFO com.selimhorri.app.service.impl.ProductServiceImpl - *** ProductDto, service; fetch product by id *
+01:55:58.393 [main] INFO com.selimhorri.app.service.impl.ProductServiceImpl - *** ProductDto, service; update product *
+01:55:58.700 [main] INFO com.selimhorri.app.service.impl.ProductServiceImpl - *** ProductDto, service; fetch product by id *
+[ERROR] Tests run: 5, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 31.915 s <<< FAILURE! - in com.selimhorri.app.service.ProductServiceImplTest
+[ERROR] testSave_ValidProduct_SavesSuccessfully  Time elapsed: 28.129 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.selimhorri.app.service.ProductServiceImplTest.testSave_ValidProduct_SavesSuccessfully(ProductServiceImplTest.java:133)
+
+[ERROR] testFindAll_ReturnsProductList  Time elapsed: 0.585 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.selimhorri.app.service.ProductServiceImplTest.testFindAll_ReturnsProductList(ProductServiceImplTest.java:110)
+
+[ERROR] testFindById_ProductExists_ReturnsProduct  Time elapsed: 0.581 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.selimhorri.app.service.ProductServiceImplTest.testFindById_ProductExists_ReturnsProduct(ProductServiceImplTest.java:64)
+
+[ERROR] testUpdate_ExistingProduct_UpdatesSuccessfully  Time elapsed: 0.079 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.selimhorri.app.service.ProductServiceImplTest.testUpdate_ExistingProduct_UpdatesSuccessfully(ProductServiceImplTest.java:156)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   ProductServiceImplTest.testFindAll_ReturnsProductList:110 » NullPointer
+[ERROR]   ProductServiceImplTest.testFindById_ProductExists_ReturnsProduct:64 » NullPointer
+[ERROR]   ProductServiceImplTest.testSave_ValidProduct_SavesSuccessfully:133 » NullPointer
+[ERROR]   ProductServiceImplTest.testUpdate_ExistingProduct_UpdatesSuccessfully:156 » NullPointer
+[INFO] 
+[ERROR] Tests run: 5, Failures: 0, Errors: 4, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:26 min
+[INFO] Finished at: 2025-11-05T01:56:01-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project product-service: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,34 @@
+networks:
+  ecommerce-net:
+    name: ecommerce-net
+
+services:
+  zipkin-container:
+    image: openzipkin/zipkin
+    container_name: zipkin-container
+    ports:
+      - "9411:9411"
+    networks:
+      - ecommerce-net
+
+  service-discovery-container:
+    image: selimhorri/service-discovery-ecommerce-boot:0.1.0
+    container_name: service-discovery-container
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin-container:9411
+    networks:
+      - ecommerce-net
+
+  cloud-config-container:
+    image: selimhorri/cloud-config-ecommerce-boot:0.1.0
+    container_name: cloud-config-container
+    ports:
+      - "9296:9296"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin-container:9411
+    networks:
+      - ecommerce-net

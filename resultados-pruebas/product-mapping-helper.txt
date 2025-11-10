@@ -1,0 +1,43 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.selimhorri:product-service >-------------------
+[INFO] Building product-service 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ product-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ product-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 24 source files to /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ product-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ product-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/product-service/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ product-service ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.selimhorri.app.helper.ProductMappingHelperTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.046 s - in com.selimhorri.app.helper.ProductMappingHelperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  08:54 min
+[INFO] Finished at: 2025-11-05T01:50:32-05:00
+[INFO] ------------------------------------------------------------------------

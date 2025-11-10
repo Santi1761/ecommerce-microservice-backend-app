@@ -1,0 +1,14 @@
+PRUEBAS DE RENDIMIENTO - 2025-11-04 00:02:54.558587
+============================================================
+
+Total requests: 250
+Exitosos: 250
+Fallidos: 0
+Tasa de éxito: 100.00%
+Throughput: 20.57 req/s
+
+Tiempo respuesta promedio: 39.08 ms
+Tiempo respuesta mínimo: 7.61 ms
+Tiempo respuesta máximo: 298.22 ms
+P95: 197.22 ms
+P99: 293.16 ms

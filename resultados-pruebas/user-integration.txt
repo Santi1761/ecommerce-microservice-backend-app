@@ -1,0 +1,1426 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.selimhorri:user-service >---------------------
+[INFO] Building user-service 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ user-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ user-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ user-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ user-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ user-service ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.selimhorri.app.resource.UserResourceIntegrationTest
+01:56:23.761 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+01:56:23.965 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+01:56:24.446 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.selimhorri.app.resource.UserResourceIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+01:56:24.645 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.selimhorri.app.resource.UserResourceIntegrationTest], using SpringBootContextLoader
+01:56:24.739 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.selimhorri.app.resource.UserResourceIntegrationTest]: class path resource [com/selimhorri/app/resource/UserResourceIntegrationTest-context.xml] does not exist
+01:56:24.749 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.selimhorri.app.resource.UserResourceIntegrationTest]: class path resource [com/selimhorri/app/resource/UserResourceIntegrationTestContext.groovy] does not exist
+01:56:24.750 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.selimhorri.app.resource.UserResourceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+01:56:24.753 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.selimhorri.app.resource.UserResourceIntegrationTest]: UserResourceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:56:25.653 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.selimhorri.app.resource.UserResourceIntegrationTest]
+01:56:26.932 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/target/classes/com/selimhorri/app/UserServiceApplication.class]
+01:56:27.023 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.selimhorri.app.UserServiceApplication for test class com.selimhorri.app.resource.UserResourceIntegrationTest
+01:56:30.753 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.selimhorri.app.resource.UserResourceIntegrationTest]: using defaults.
+01:56:30.839 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+01:56:32.138 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5d5f10b2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@74c79fa2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1e0f9063, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@53bd8fca, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7642df8f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e30646a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5cde6747, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@63a270c9, org.springframework.test.context.event.EventPublishingTestExecutionListener@37c7595, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3ed242a4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1199fe66, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@614df0a4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1fdf1c5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d96543c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@73a2e526]
+01:56:32.428 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@ff684e1 testClass = UserResourceIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@23aa363a testClass = UserResourceIntegrationTest, locations = '{}', classes = '{class com.selimhorri.app.UserServiceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[[ImportsContextCustomizer@5ef6ae06 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7f485fda, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@8519cb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48bb62, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1caa0244, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7c37508a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@6dde5c8c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+01:56:34.050 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@ff684e1 testClass = UserResourceIntegrationTest, testInstance = com.selimhorri.app.resource.UserResourceIntegrationTest@3243b914, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@23aa363a testClass = UserResourceIntegrationTest, locations = '{}', classes = '{class com.selimhorri.app.UserServiceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[[ImportsContextCustomizer@5ef6ae06 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7f485fda, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@8519cb4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@48bb62, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1caa0244, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7c37508a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@6dde5c8c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]].
+01:56:48.073 [main] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
+01:56:48.461 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.7)
+
+2025-11-05 02:02:16.017  INFO [USER-SERVICE,,] 1764 --- [           main] c.s.a.r.UserResourceIntegrationTest      : Starting UserResourceIntegrationTest using Java 11.0.28 on lenovo with PID 1764 (started by santiago in /mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service)
+2025-11-05 02:02:16.022  INFO [USER-SERVICE,,] 1764 --- [           main] c.s.a.r.UserResourceIntegrationTest      : The following profiles are active: dev
+2025-11-05 02:02:16.129  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:9296
+2025-11-05 02:02:16.130  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.context.config.ConfigDataLoader    : Located environment: name=USER-SERVICE, profiles=[dev], label=null, version=be46dd4bca5b2663375456c55304bb492c408a4f, state=null
+2025-11-05 02:02:25.459  INFO [USER-SERVICE,,] 1764 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-05 02:02:25.503 DEBUG [USER-SERVICE,,] 1764 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for JPA repositories in packages com.selimhorri.app.
+2025-11-05 02:02:26.074 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/target/classes/com/selimhorri/app/repository/AddressRepository.class]
+2025-11-05 02:02:26.075 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/target/classes/com/selimhorri/app/repository/CredentialRepository.class]
+2025-11-05 02:02:26.076 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/target/classes/com/selimhorri/app/repository/UserRepository.class]
+2025-11-05 02:02:26.076 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [/mnt/c/Users/santiago/Desktop/Universidad/Doce/Ingenieria de Software 5/Taller 2/ecommerce-microservice-backend-app/user-service/target/classes/com/selimhorri/app/repository/VerificationTokenRepository.class]
+2025-11-05 02:02:27.939  INFO [USER-SERVICE,,] 1764 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2431 ms. Found 4 JPA repository interfaces.
+2025-11-05 02:02:32.471  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a3a8f345-fd37-3c7d-adfa-6e6d341f0195
+2025-11-05 02:03:00.661  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-11-05 02:03:01.475  INFO [USER-SERVICE,,] 1764 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-05 02:03:01.496  INFO [USER-SERVICE,,] 1764 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-11-05 02:03:05.770  INFO [USER-SERVICE,,] 1764 --- [           main] o.a.c.c.C.[.[localhost].[/user-service]  : Initializing Spring embedded WebApplicationContext
+2025-11-05 02:03:05.784  INFO [USER-SERVICE,,] 1764 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 49647 ms
+2025-11-05 02:03:20.719  INFO [USER-SERVICE,,] 1764 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-05 02:03:36.715  INFO [USER-SERVICE,,] 1764 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-05 02:03:37.225  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ecommerce_dev_db'
+2025-11-05 02:03:51.275 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2025-11-05 02:04:20.482 DEBUG [USER-SERVICE,,] 1764 --- [/spans} check()] org.springframework.web.HttpLogging      : HTTP POST http://localhost:9411/api/v2/spans
+2025-11-05 02:04:20.573 DEBUG [USER-SERVICE,,] 1764 --- [/spans} check()] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-11-05 02:04:20.586 DEBUG [USER-SERVICE,,] 1764 --- [/spans} check()] org.springframework.web.HttpLogging      : Writing [[B@25ef3c6a] as "application/json"
+2025-11-05 02:04:21.758  WARN [USER-SERVICE,,] 1764 --- [           main] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=java.util.concurrent.TimeoutException: RestTemplateSender{http://localhost:9411/api/v2/spans} check() timed out after 1000ms}]
+2025-11-05 02:04:21.979 DEBUG [USER-SERVICE,,] 1764 --- [/spans} check()] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-11-05 02:12:23.046  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.7.3 by Redgate
+2025-11-05 02:12:36.735  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:ecommerce_dev_db (H2 1.4)
+2025-11-05 02:13:08.544  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:12.472s)
+2025-11-05 02:13:10.277  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-11-05 02:13:21.304  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:13:22.309  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:13:26.639  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2025-11-05 02:13:27.507  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - create users table"
+2025-11-05 02:13:30.294  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:13:32.998  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - insert users table"
+2025-11-05 02:13:33.300  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 4 rows affected
+2025-11-05 02:13:36.802  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "3 - create address table"
+2025-11-05 02:13:37.706  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:13:39.594  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "4 - insert address table"
+2025-11-05 02:13:39.690  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 6 rows affected
+2025-11-05 02:13:41.899  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "5 - create credentials table"
+2025-11-05 02:13:42.500  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:14:22.360  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "6 - insert credentials table"
+2025-11-05 02:14:32.276  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 4 rows affected
+2025-11-05 02:14:46.699  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "7 - create verification tokens table"
+2025-11-05 02:14:46.708  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:14:46.801  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "8 - insert verification tokens table"
+2025-11-05 02:14:46.806  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 4 rows affected
+2025-11-05 02:14:46.918  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "9 - create address user id fk"
+2025-11-05 02:14:46.942  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:14:47.111  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "10 - create credentials user id fk"
+2025-11-05 02:14:47.116  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:14:47.205  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "11 - create verification tokens credential id fk"
+2025-11-05 02:14:47.212  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2025-11-05 02:14:47.229  INFO [USER-SERVICE,,] 1764 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 11 migrations to schema "PUBLIC", now at version v11 (execution time 01:21.207s)
+2025-11-05 02:14:49.227  INFO [USER-SERVICE,,] 1764 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-05 02:14:49.985  INFO [USER-SERVICE,,] 1764 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2025-11-05 02:14:52.033  INFO [USER-SERVICE,,] 1764 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-11-05 02:14:54.952  INFO [USER-SERVICE,,] 1764 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-11-05 02:15:03.818  INFO [USER-SERVICE,,] 1764 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-11-05 02:15:04.016  INFO [USER-SERVICE,,] 1764 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-05 02:15:07.658 DEBUG [USER-SERVICE,,] 1764 --- [           main] .c.JpaMetamodelMappingContextFactoryBean : Initializing JpaMetamodelMappingContext…
+2025-11-05 02:15:07.969 DEBUG [USER-SERVICE,,] 1764 --- [           main] .c.JpaMetamodelMappingContextFactoryBean : Finished initializing JpaMetamodelMappingContext!
+2025-11-05 02:15:11.959 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.selimhorri.app.repository.AddressRepository…
+2025-11-05 02:15:13.091 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for {}.
+2025-11-05 02:15:15.082 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.selimhorri.app.repository.CredentialRepository…
+2025-11-05 02:15:15.786 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query Credential.findByUsername
+2025-11-05 02:15:15.894 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query Credential.findByUsername
+2025-11-05 02:15:17.180 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for {}.
+2025-11-05 02:15:19.176 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.selimhorri.app.repository.UserRepository…
+2025-11-05 02:15:19.270 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query User.findByCredentialUsername
+2025-11-05 02:15:19.277 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query User.findByCredentialUsername
+2025-11-05 02:15:19.383 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for {}.
+2025-11-05 02:15:21.184 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.selimhorri.app.repository.VerificationTokenRepository…
+2025-11-05 02:15:21.284 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for {}.
+2025-11-05 02:15:31.758  WARN [USER-SERVICE,,] 1764 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-05 02:15:40.276 DEBUG [USER-SERVICE,,] 1764 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-05 02:15:44.214 DEBUG [USER-SERVICE,,] 1764 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 32 mappings in 'requestMappingHandlerMapping'
+2025-11-05 02:16:14.927 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-11-05 02:16:15.387 DEBUG [USER-SERVICE,,] 1764 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-05 02:16:16.711  WARN [USER-SERVICE,,] 1764 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2025-11-05 02:16:31.117  INFO [USER-SERVICE,,] 1764 --- [           main] o.a.c.c.C.[.[localhost].[/user-service]  : Initializing Spring TestDispatcherServlet ''
+2025-11-05 02:16:31.120  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-05 02:16:31.311  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 25 endpoint(s) beneath base path '/actuator'
+2025-11-05 02:16:32.105  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 983 ms
+2025-11-05 02:16:35.310  INFO [USER-SERVICE,,] 1764 --- [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-05 02:16:43.769  WARN [USER-SERVICE,,] 1764 --- [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-05 02:16:51.665  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 41851 (http) with context path '/user-service'
+2025-11-05 02:16:51.675  INFO [USER-SERVICE,,] 1764 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 41851
+2025-11-05 02:16:51.833  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-05 02:16:54.544  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-05 02:16:54.693  INFO [USER-SERVICE,,] 1764 --- [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-05 02:16:55.770  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-05 02:16:55.814  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-05 02:16:55.829  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-05 02:16:55.832  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-05 02:16:55.834  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-05 02:16:55.841  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-05 02:16:55.842  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-05 02:16:56.537 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.web.client.RestTemplate              : HTTP GET http://service-discovery-container:8761/eureka/apps/
+2025-11-05 02:16:57.820 DEBUG [USER-SERVICE,,] 1764 --- [           main] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:10.194  INFO [USER-SERVICE,,] 1764 --- [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$5aaa6dc6.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:146)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:131)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:350)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$7(ClassBasedTestDescriptor.java:350)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:349)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$4(ClassBasedTestDescriptor.java:270)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:269)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:930)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 144 more
+
+2025-11-05 02:17:10.199  WARN [USER-SERVICE,,] 1764 --- [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+2025-11-05 02:17:10.204  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$5aaa6dc6.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:146)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:131)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:350)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$7(ClassBasedTestDescriptor.java:350)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:349)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$4(ClassBasedTestDescriptor.java:270)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:269)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+2025-11-05 02:17:10.206  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
+2025-11-05 02:17:10.207  WARN [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+2025-11-05 02:17:10.258  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
+2025-11-05 02:17:10.291  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-05 02:17:10.308  INFO [USER-SERVICE,,] 1764 --- [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-05 02:17:10.588  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762327030508 with initial instances count: 0
+2025-11-05 02:17:10.780  INFO [USER-SERVICE,,] 1764 --- [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2025-11-05 02:17:10.807  INFO [USER-SERVICE,,] 1764 --- [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762327030806, current=UP, previous=STARTING]
+2025-11-05 02:17:10.903  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0: registering service...
+2025-11-05 02:17:11.099 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : HTTP POST http://service-discovery-container:8761/eureka/apps/USER-SERVICE
+2025-11-05 02:17:11.199 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:11.336  INFO [USER-SERVICE,,] 1764 --- [           main] c.s.a.r.UserResourceIntegrationTest      : Started UserResourceIntegrationTest in 1191.001 seconds (JVM running for 1218.349)
+2025-11-05 02:17:11.508 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 10.255.255.254:USER-SERVICE:0, appName = USER-SERVICE, hostName = 10.255.255.254, status = UP, ipAddr = 10.255.255.254, port = 41851, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@85eba52] as "application/json"
+2025-11-05 02:17:12.389  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 22 more
+
+2025-11-05 02:17:12.406  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+2025-11-05 02:17:12.677  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:12.690  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:30.095 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.selimhorri.app.resource.UserResource#findAll()
+2025-11-05 02:17:30.540  INFO [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] c.selimhorri.app.resource.UserResource   : *** UserDto List, controller; fetch all users *
+2025-11-05 02:17:30.888  INFO [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] c.s.app.service.impl.UserServiceImpl     : *** UserDto List, service; fetch all users *
+2025-11-05 02:17:38.613 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* select
+        generatedAlias0 
+    from
+        User as generatedAlias0 */ select
+            user0_.user_id as user_id1_2_,
+            user0_.created_at as created_2_2_,
+            user0_.updated_at as updated_3_2_,
+            user0_.email as email4_2_,
+            user0_.first_name as first_na5_2_,
+            user0_.image_url as image_ur6_2_,
+            user0_.last_name as last_nam7_2_,
+            user0_.phone as phone8_2_ 
+        from
+            users user0_
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        User as generatedAlias0 */ select
+            user0_.user_id as user_id1_2_,
+            user0_.created_at as created_2_2_,
+            user0_.updated_at as updated_3_2_,
+            user0_.email as email4_2_,
+            user0_.first_name as first_na5_2_,
+            user0_.image_url as image_ur6_2_,
+            user0_.last_name as last_nam7_2_,
+            user0_.phone as phone8_2_ 
+        from
+            users user0_
+2025-11-05 02:17:40.683 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:41.151  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-05 02:17:41.154  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-05 02:17:41.154 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:41.155  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-05 02:17:41.155  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-05 02:17:41.155  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-05 02:17:41.155  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-05 02:17:41.155  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:41.164 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:41.170 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:41.335 DEBUG [USER-SERVICE,,] 1764 --- [freshExecutor-0] o.s.web.client.RestTemplate              : HTTP GET http://service-discovery-container:8761/eureka/apps/
+2025-11-05 02:17:41.344 DEBUG [USER-SERVICE,,] 1764 --- [tbeatExecutor-0] o.s.web.client.RestTemplate              : HTTP PUT http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0?status=UP&lastDirtyTimestamp=1762327030786
+2025-11-05 02:17:41.400 DEBUG [USER-SERVICE,,] 1764 --- [freshExecutor-0] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:41.429 DEBUG [USER-SERVICE,,] 1764 --- [tbeatExecutor-0] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:42.554 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-11-05 02:17:43.045 DEBUG [USER-SERVICE,3b20891191c42c70,3b20891191c42c70] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [DtoCollectionResponse(collection=[UserDto(userId=1, firstName=selim, lastName=horri, imageUrl=https: (truncated)...]
+2025-11-05 02:17:43.543  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0: registering service...
+2025-11-05 02:17:43.733 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : HTTP POST http://service-discovery-container:8761/eureka/apps/USER-SERVICE
+2025-11-05 02:17:43.743 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:43.756 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 10.255.255.254:USER-SERVICE:0, appName = USER-SERVICE, hostName = 10.255.255.254, status = UP, ipAddr = 10.255.255.254, port = 41851, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@85eba52] as "application/json"
+2025-11-05 02:17:45.402 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://localhost:9411/api/v2/spans
+2025-11-05 02:17:45.426 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-11-05 02:17:45.428 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@a1de00c] as "application/json"
+2025-11-05 02:17:45.809 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-11-05 02:17:46.246 DEBUG [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.selimhorri.app.resource.UserResource#findById(String)
+2025-11-05 02:17:46.953  INFO [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] c.selimhorri.app.resource.UserResource   : *** UserDto, resource; fetch user by id *
+2025-11-05 02:17:47.032  INFO [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] c.s.app.service.impl.UserServiceImpl     : *** UserDto, service; fetch user by id *
+2025-11-05 02:17:47.249 DEBUG [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] org.hibernate.SQL                        : 
+    select
+        user0_.user_id as user_id1_2_0_,
+        user0_.created_at as created_2_2_0_,
+        user0_.updated_at as updated_3_2_0_,
+        user0_.email as email4_2_0_,
+        user0_.first_name as first_na5_2_0_,
+        user0_.image_url as image_ur6_2_0_,
+        user0_.last_name as last_nam7_2_0_,
+        user0_.phone as phone8_2_0_ 
+    from
+        users user0_ 
+    where
+        user0_.user_id=?
+Hibernate: 
+    select
+        user0_.user_id as user_id1_2_0_,
+        user0_.created_at as created_2_2_0_,
+        user0_.updated_at as updated_3_2_0_,
+        user0_.email as email4_2_0_,
+        user0_.first_name as first_na5_2_0_,
+        user0_.image_url as image_ur6_2_0_,
+        user0_.last_name as last_nam7_2_0_,
+        user0_.phone as phone8_2_0_ 
+    from
+        users user0_ 
+    where
+        user0_.user_id=?
+2025-11-05 02:17:47.629 DEBUG [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:47.851 DEBUG [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-11-05 02:17:47.855 DEBUG [USER-SERVICE,996aec99a1329e91,996aec99a1329e91] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [UserDto(userId=1, firstName=selim, lastName=horri, imageUrl=https://bootdey.com/img/Content/avatar/a (truncated)...]
+2025-11-05 02:17:48.843 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://localhost:9411/api/v2/spans
+2025-11-05 02:17:48.852 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-11-05 02:17:48.853 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@4c77d523] as "application/json"
+2025-11-05 02:17:49.054 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-11-05 02:17:51.519  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:883)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 21 more
+
+2025-11-05 02:17:51.521  INFO [USER-SERVICE,,] 1764 --- [tbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on PUT request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:883)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 20 more
+
+2025-11-05 02:17:51.521  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:930)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 23 more
+
+2025-11-05 02:17:51.526  WARN [USER-SERVICE,,] 1764 --- [tbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+2025-11-05 02:17:51.526  WARN [USER-SERVICE,,] 1764 --- [freshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://service-discovery-container:8761/eureka/apps/": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+2025-11-05 02:17:51.526  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+2025-11-05 02:17:51.531  INFO [USER-SERVICE,,] 1764 --- [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-11-05 02:17:51.535  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:51.535 ERROR [USER-SERVICE,,] 1764 --- [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:51.536  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:55.744 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.selimhorri.app.resource.UserResource#findAll()
+2025-11-05 02:17:55.830  INFO [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] c.selimhorri.app.resource.UserResource   : *** UserDto List, controller; fetch all users *
+2025-11-05 02:17:55.836  INFO [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] c.s.app.service.impl.UserServiceImpl     : *** UserDto List, service; fetch all users *
+2025-11-05 02:17:55.851 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* select
+        generatedAlias0 
+    from
+        User as generatedAlias0 */ select
+            user0_.user_id as user_id1_2_,
+            user0_.created_at as created_2_2_,
+            user0_.updated_at as updated_3_2_,
+            user0_.email as email4_2_,
+            user0_.first_name as first_na5_2_,
+            user0_.image_url as image_ur6_2_,
+            user0_.last_name as last_nam7_2_,
+            user0_.phone as phone8_2_ 
+        from
+            users user0_
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        User as generatedAlias0 */ select
+            user0_.user_id as user_id1_2_,
+            user0_.created_at as created_2_2_,
+            user0_.updated_at as updated_3_2_,
+            user0_.email as email4_2_,
+            user0_.first_name as first_na5_2_,
+            user0_.image_url as image_ur6_2_,
+            user0_.last_name as last_nam7_2_,
+            user0_.phone as phone8_2_ 
+        from
+            users user0_
+2025-11-05 02:17:55.913 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:55.947 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:55.951 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:55.954 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] org.hibernate.SQL                        : 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+Hibernate: 
+    /* load com.selimhorri.app.domain.Credential */ select
+        credential0_.credential_id as credenti1_1_0_,
+        credential0_.created_at as created_2_1_0_,
+        credential0_.updated_at as updated_3_1_0_,
+        credential0_.is_account_non_expired as is_accou4_1_0_,
+        credential0_.is_account_non_locked as is_accou5_1_0_,
+        credential0_.is_credentials_non_expired as is_crede6_1_0_,
+        credential0_.is_enabled as is_enabl7_1_0_,
+        credential0_.password as password8_1_0_,
+        credential0_.role as role9_1_0_,
+        credential0_.user_id as user_id11_1_0_,
+        credential0_.username as usernam10_1_0_ 
+    from
+        credentials credential0_ 
+    where
+        credential0_.user_id=?
+2025-11-05 02:17:56.237 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-11-05 02:17:56.245 DEBUG [USER-SERVICE,abf83466ea5a1509,abf83466ea5a1509] 1764 --- [           main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [DtoCollectionResponse(collection=[UserDto(userId=1, firstName=selim, lastName=horri, imageUrl=https: (truncated)...]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1,293.803 s - in com.selimhorri.app.resource.UserResourceIntegrationTest
+2025-11-05 02:17:57.128 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://localhost:9411/api/v2/spans
+2025-11-05 02:17:57.132 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-11-05 02:17:57.134 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@4277e918] as "application/json"
+2025-11-05 02:17:57.675 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-11-05 02:17:59.426  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
+2025-11-05 02:17:59.432  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762327079431, current=DOWN, previous=UP]
+2025-11-05 02:17:59.432  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0: registering service...
+2025-11-05 02:17:59.618 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : HTTP POST http://service-discovery-container:8761/eureka/apps/USER-SERVICE
+2025-11-05 02:17:59.630 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:17:59.756 DEBUG [USER-SERVICE,,] 1764 --- [nfoReplicator-0] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 10.255.255.254:USER-SERVICE:0, appName = USER-SERVICE, hostName = 10.255.255.254, status = DOWN, ipAddr = 10.255.255.254, port = 41851, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@85eba52] as "application/json"
+2025-11-05 02:17:59.945  INFO [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 22 more
+
+2025-11-05 02:17:59.948  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE": service-discovery-container; nested exception is java.net.UnknownHostException: service-discovery-container
+2025-11-05 02:17:59.950  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:17:59.951  WARN [USER-SERVICE,,] 1764 --- [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:18:00.950  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-05 02:18:01.848 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://localhost:9411/api/v2/spans
+2025-11-05 02:18:01.856 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-11-05 02:18:01.864 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@278f7cda] as "application/json"
+2025-11-05 02:18:02.023 DEBUG [USER-SERVICE,,] 1764 --- [/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-11-05 02:18:02.049  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-05 02:18:02.534  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-05 02:18:02.552  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-05 02:18:05.637  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-05 02:18:05.992 DEBUG [USER-SERVICE,,] 1764 --- [ionShutdownHook] o.s.web.client.RestTemplate              : HTTP DELETE http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0
+2025-11-05 02:18:06.028 DEBUG [USER-SERVICE,,] 1764 --- [ionShutdownHook] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-05 02:18:17.107  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://service-discovery-container:8761/eureka/}, exception=I/O error on DELETE request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1152)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1145)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:137)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:930)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 40 more
+
+2025-11-05 02:18:17.116  WARN [USER-SERVICE,,] 1764 --- [ionShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://service-discovery-container:8761/eureka/apps/USER-SERVICE/10.255.255.254:USER-SERVICE:0": service-discovery-container: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: service-discovery-container: Temporary failure in name resolution
+2025-11-05 02:18:17.207 ERROR [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/10.255.255.254:USER-SERVICE:0 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.16.jar:1.10.16]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.16.jar:1.10.16]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.0.4.jar:3.0.4]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.0.4.jar:3.0.4]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1152) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1145) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172) ~[spring-boot-2.5.7.jar:2.5.7]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:137) ~[spring-boot-2.5.7.jar:2.5.7]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:106) ~[spring-boot-2.5.7.jar:2.5.7]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2025-11-05 02:18:17.244  INFO [USER-SERVICE,,] 1764 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22:10 min
+[INFO] Finished at: 2025-11-05T02:18:17-05:00
+[INFO] ------------------------------------------------------------------------
